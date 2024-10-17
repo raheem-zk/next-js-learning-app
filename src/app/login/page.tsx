@@ -4,13 +4,15 @@
 import React, { useState } from "react";
 import { useRouter } from 'next/navigation'
 import { loginApi } from "@/api/authApi/authApi";
+import { userLoggedIn } from "@/redux/user/authSlice";
+import { useDispatch } from "react-redux";
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
   const { push } = useRouter();
-
+  const dispatch = useDispatch()
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(null); // Reset error state
@@ -24,7 +26,9 @@ const Login: React.FC = () => {
       //   localStorage.setItem("userToken", token);
 
       if(response?.message == "success") {
-          push("/profile");
+        dispatch(userLoggedIn(response?.data));
+          
+        push("/profile");
       } else {
         setError(response?.message);
       }

@@ -2,7 +2,7 @@ import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 
 // Use the correct way to access environment variables in Next.js
 const baseBackendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || ''; // Ensure it's a string
-
+// alert(JSON.stringify(process))
 const userPath: string = ""; // Define userPath appropriately
 
 // Create a function to configure the Axios instance

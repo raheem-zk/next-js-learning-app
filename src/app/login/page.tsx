@@ -17,7 +17,7 @@ const Login: React.FC = () => {
 
     try {
       const response = await loginApi({
-        email,
+        phoneOrEmail : email,
         password,
       });
       //   const { token } = response.data;

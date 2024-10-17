@@ -24,7 +24,7 @@ const Login: React.FC = () => {
       //   localStorage.setItem("userToken", token);
 
       if(response?.message == "success") {
-          push("/");
+          push("/profile");
       } else {
         setError(response?.message);
       }
@@ -45,11 +45,11 @@ const Login: React.FC = () => {
         <form onSubmit={handleLogin}>
           <div className="mb-4">
             <label className="block text-gray-700 mb-1" htmlFor="email">
-              Email
+              Email or Phone number
             </label>
             <input
-              type="email"
-              id="email"
+              type="text"
+              id="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required

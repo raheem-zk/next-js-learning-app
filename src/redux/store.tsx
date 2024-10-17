@@ -1,47 +1,3 @@
-// import { configureStore } from '@reduxjs/toolkit';
-// import { createSlice } from '@reduxjs/toolkit';
-
-// // Create a slice of the state
-// const counterSlice = createSlice({
-//   name: 'counter',
-//   initialState: { value: 0 },
-//   reducers: {
-//     increment: (state) => {
-//       state.value += 1;
-//     },
-//     decrement: (state) => {
-//       state.value -= 1;
-//     },
-//   },
-// });
-
-// // Export the actions
-// export const { increment, decrement } = counterSlice.actions;
-
-// // Create the store
-// const store = configureStore({
-//   reducer: {
-//     counter: counterSlice.reducer,
-//   },
-// });
-
-// // Export the store
-// export default store;
-
-
-// import { configureStore } from "@reduxjs/toolkit";
-// import { counterSlice } from "./counterSlice";
-// // Create the store
-// const store = configureStore({
-//   reducer: {
-//     counter: counterSlice.reducer,
-//   },
-// });
-
-// // Export the store
-// export default store;
-
-
 import { configureStore } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
 import { thunk } from 'redux-thunk'
@@ -121,16 +77,3 @@ const store = configureStore({
 const persistor = persistStore(store);
 
 export { store, persistor };
-
-// import { configureStore } from '@reduxjs/toolkit'
-// import counterReducer from './counterSlice'
-
-// export const store = configureStore({
-//   reducer: {
-//     counter: counterReducer,
-//   },
-// })
-
-// export type RootState = ReturnType<typeof store.getState>
-// export type AppDispatch = typeof store.dispatch
-

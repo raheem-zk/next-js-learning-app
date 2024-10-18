@@ -1,4 +1,22 @@
 import LoginForm from "@/components/login/loginForm";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Login | spec app',
+  description: 'Login to access your account and manage your profile.',
+  openGraph: {
+    title: 'Login | spec app',
+    description: 'Login to access your account and manage your profile.',
+    // images: [
+    //   {
+    //     url: 'https://yourdomain.com/og-image.jpg',
+    //     width: 1200,
+    //     height: 630,
+    //     alt: 'Login page',
+    //   },
+    // ],
+  },
+}
 
 export default function LoginPage() {
   return (
